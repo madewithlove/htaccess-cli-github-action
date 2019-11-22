@@ -1,0 +1,13 @@
+name: 'Htaccess CLI'
+description: 'Runs the htaccess tester as a GitHub Action'
+inputs:
+  args:
+    description: 'CLI Arguments passed to htaccess-cli'
+    required: false
+    default: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
