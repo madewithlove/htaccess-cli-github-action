@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: phpspec
-      uses: madewithlove/htaccess-cli-google-action
+      uses: madewithlove/htaccess-cli-github-action
       with:
         args: --expected-url https://example.org
 ```
