@@ -12,4 +12,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.url }} --expected-url ${{ inputs.expected-url }}
+    - ${{ inputs.url }}
+    - --expected-url ${{ inputs.expected-url }}
