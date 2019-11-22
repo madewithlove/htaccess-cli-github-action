@@ -12,3 +12,18 @@ jobs:
       with:
         url: http://localhost
         expected-url: http://localhost/foo
+
+  test-failure:
+    runs-on: ubuntu-latest
+    name: Test that we can let a pipeline fail
+    steps:
+    - name: Add a very basic htaccess file
+      run: echo "RewriteRule .* /foo" >> .htaccess
+    - name: Test that we can run this action
+      uses: madewithlove/htaccess-cli-github-action@master
+      with:
+        url: http://localhost
+        expected-url: http://localhost/bar
+      continue-on-error: true
+    - name: Check that last step failed
+      run: test $? eq 0 || return 1 # return exit status 1 if previous exit status was 0
