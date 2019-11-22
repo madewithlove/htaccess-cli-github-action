@@ -26,4 +26,5 @@ jobs:
         expected-url: http://localhost/bar
       continue-on-error: true
     - name: Check that last step failed
-      run: test $? = 1
+      if: success()
+      run: return 1
