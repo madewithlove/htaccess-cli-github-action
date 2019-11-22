@@ -8,6 +8,6 @@ jobs:
     - name: Add a very basic htaccess file
       run: echo "RewriteRule .* /foo" >> .htaccess
     - name: Test that we can run this action
-      uses: madewithlove/htaccess-cli-github-action
+      uses: madewithlove/htaccess-cli-github-action@master
       with:
         args: http://localhost --expected-url http://localhost/foo

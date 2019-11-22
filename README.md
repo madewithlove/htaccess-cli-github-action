@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: phpspec
-      uses: madewithlove/htaccess-cli-github-action
+      uses: madewithlove/htaccess-cli-github-action@master
       with:
         args: http://localhost --expected-url http://localhost/foo
 ```
