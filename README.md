@@ -18,8 +18,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: phpspec
+    - name: Test if htaccess files in current directory does wanted redirects
       uses: madewithlove/htaccess-cli-github-action@master
       with:
-        args: http://localhost --expected-url http://localhost/foo
+        url: http://localhost
+        expected-url: http://localhost/foo
 ```
