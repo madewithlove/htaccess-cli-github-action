@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    name: Test that we can use the htaccess tester
+    steps:
+    - name: Add a very basic htaccess file
+      run: echo "RewriteRule .* /foo" >> .htaccess
+    - name: Test that we can run this action
+      uses: madewithlove/htaccess-cli-github-action
+      with:
+        args: http://localhost --expected-url http://localhost/foo
