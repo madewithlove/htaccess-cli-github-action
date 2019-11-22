@@ -27,4 +27,4 @@ jobs:
       continue-on-error: true
     - name: Check that last step failed
       if: success()
-      run: return 1
+      run: exit 1
