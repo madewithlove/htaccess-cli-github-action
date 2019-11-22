@@ -25,6 +25,3 @@ jobs:
         url: http://localhost
         expected-url: http://localhost/bar
       continue-on-error: true
-    - name: Check that last step failed
-      if: success()
-      run: exit 1
