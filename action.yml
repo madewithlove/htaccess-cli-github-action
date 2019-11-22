@@ -15,3 +15,7 @@ runs:
     - ${{ inputs.url }}
     - --expected-url
     - ${{ inputs.expected-url }}
+
+branding:
+  icon: 'heart'
+  color: 'red'
