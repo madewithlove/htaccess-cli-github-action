@@ -21,5 +21,5 @@ jobs:
     - name: phpspec
       uses: madewithlove/htaccess-cli-github-action
       with:
-        args: --expected-url https://example.org
+        args: http://localhost --expected-url http://localhost/foo
 ```
