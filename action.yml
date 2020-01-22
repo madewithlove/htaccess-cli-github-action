@@ -1,20 +1,16 @@
 name: 'Htaccess CLI'
 description: 'Runs the htaccess tester as a GitHub Action'
 inputs:
-  url:
-    description: 'The url to test the htaccess file against'
-    required: true
-  expected-url:
-    description: 'The url you expect as output, CI will fail if this is not the real result'
+  url-list:
+    description: 'The file path for the url list'
     required: true
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.url }}
-    - --expected-url
-    - ${{ inputs.expected-url }}
+    - --url-list
+    - ${{ inputs.url-list }}
 
 branding:
   icon: 'heart'
