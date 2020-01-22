@@ -28,7 +28,7 @@ jobs:
 
   test-multiple-urls:
     runs-on: ubuntu-latest
-    name: Test that we can let a pipeline fail
+    name: Test that multiple urls can be used
     steps:
     - name: Add a very basic htaccess file
       run: echo "RewriteRule .* /foo" >> .htaccess
