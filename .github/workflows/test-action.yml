@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Add a very basic htaccess file
       run: echo "RewriteRule .* /foo" >> .htaccess
-    - name: Add a url-list file
+    - name: Add an url-list file
       run: |
         echo "http://localhost/test: http://localhost/foo" >> url-list.yml
         echo "http://localhost/bar: http://localhost/foo" >> url-list.yml
@@ -40,3 +40,19 @@ jobs:
       uses: madewithlove/htaccess-cli-github-action@multiple
       with:
         url-list: url-list.yml
+
+  test-multiple-urls-failure:
+    runs-on: ubuntu-latest
+    name: Test that multiple urls failure works
+    steps:
+    - name: Add a very basic htaccess file
+      run: echo "RewriteRule .* /foo" >> .htaccess
+    - name: Add an url-list file
+      run: |
+        echo "http://localhost/test: http://localhost/foo" >> url-list.yml
+        echo "http://localhost/bar: http://localhost/wrong" >> url-list.yml
+    - name: Test that we can run this action
+      uses: madewithlove/htaccess-cli-github-action@multiple
+      with:
+        url-list: url-list.yml
+      continue-on-error: true
