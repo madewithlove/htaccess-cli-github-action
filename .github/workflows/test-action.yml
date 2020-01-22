@@ -25,3 +25,16 @@ jobs:
         url: http://localhost
         expected-url: http://localhost/bar
       continue-on-error: true
+
+  test-multiple-urls:
+    runs-on: ubuntu-latest
+    name: Test that we can let a pipeline fail
+    steps:
+    - name: Add a very basic htaccess file
+      run: echo "RewriteRule .* /foo" >> .htaccess
+    - name: Add a url-list file
+      run: echo "http://localhost/test: http://localhost/foo" >> url-list.yml && echo "http://localhost/test: http://localhost/bar" >> url-list.yml
+    - name: Test that we can run this action
+      uses: madewithlove/htaccess-cli-github-action@multiple
+      with:
+        url-list: url-list.yml
