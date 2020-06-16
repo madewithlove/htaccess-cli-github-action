@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Test if htaccess files in current directory does wanted redirects
-      uses: madewithlove/htaccess-cli-github-action@master
+      uses: madewithlove/htaccess-cli-github-action@main
       with:
         url: http://localhost
         expected-url: http://localhost/foo
@@ -28,7 +28,7 @@ jobs:
 You can also run this on multiple urls when using the multiple branch
 
 We assume here that the url-list file is committed in the repository,
-you can also add it in the pipeline itself, which you can see in <https://github.com/madewithlove/htaccess-cli-github-action/blob/master/.github/workflows/test-action.yml#L36>
+you can also add it in the pipeline itself, which you can see in <https://github.com/madewithlove/htaccess-cli-github-action/blob/main/.github/workflows/test-action.yml#L36>
 
 ```yaml
 name: CI

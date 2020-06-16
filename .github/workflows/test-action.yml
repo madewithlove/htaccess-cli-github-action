@@ -8,7 +8,7 @@ jobs:
     - name: Add a very basic htaccess file
       run: echo "RewriteRule .* /foo" >> .htaccess
     - name: Test that we can run this action
-      uses: madewithlove/htaccess-cli-github-action@master
+      uses: madewithlove/htaccess-cli-github-action@main
       with:
         url: http://localhost
         expected-url: http://localhost/foo
@@ -20,7 +20,7 @@ jobs:
     - name: Add a very basic htaccess file
       run: echo "RewriteRule .* /foo" >> .htaccess
     - name: Test that we can run this action
-      uses: madewithlove/htaccess-cli-github-action@master
+      uses: madewithlove/htaccess-cli-github-action@main
       with:
         url: http://localhost
         expected-url: http://localhost/bar
