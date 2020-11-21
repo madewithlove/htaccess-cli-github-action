@@ -7,7 +7,7 @@ inputs:
   expected-url:
     description: 'The url you expect as output, CI will fail if this is not the real result'
     required: true
-  path:
+  working-directory:
     description: 'The working directory path'
     required: false
 
