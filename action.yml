@@ -7,6 +7,9 @@ inputs:
   expected-url:
     description: 'The url you expect as output, CI will fail if this is not the real result'
     required: true
+  path:
+    description: 'The working directory path'
+    required: false
 
 runs:
   using: 'docker'
@@ -15,6 +18,7 @@ runs:
     - ${{ inputs.url }}
     - --expected-url
     - ${{ inputs.expected-url }}
+    - ${{ inputs.path }}
 
 branding:
   icon: 'heart'
