@@ -54,3 +54,23 @@ The structure of the url-list file should look like this:
 http://localhost/foo: http://localhost/test
 http://localhost/bar: http://localhost/test
 ```
+
+Finally, you can supply a working directory for the action to run in. 
+
+```yaml
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Test if htaccess files in a working directory is valid
+      uses: madewithlove/htaccess-cli-github-actions@main
+      with: 
+        url: http://localhost/
+        expected-url: http://localhost/foo
+        working-directory: ./html
