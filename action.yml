@@ -19,7 +19,7 @@ runs:
     - --expected-url
     - ${{ inputs.expected-url }}
     - --path
-    -${{ inputs.working-directory}}
+    - ${{ inputs.working-directory}}
 
 branding:
   icon: 'heart'
